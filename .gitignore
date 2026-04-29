@@ -1,0 +1,6 @@
+*.bam
+*.bai
+*.gz
+read-counts.txt
+read-counts.txt.summary
+
