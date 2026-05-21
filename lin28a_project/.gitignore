@@ -22,7 +22,3 @@ __pycache__/
 # Do not track raw data directories
 lin28a_project/data/raw/
 lin28a_project/data/bam/
-# Local datapack / large input files
-/tools/
-__pycache__/
-*.pyc

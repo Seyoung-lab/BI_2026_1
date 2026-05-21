@@ -1,0 +1,161 @@
+#---------------------------------------------------------------------------------------
+#Step 1. Data preparation
+#--------------------------------------------------------------------------------------------------------------
+
+# Main input:Table S5
+LIN28A CLIP enrichment
+CLIP FDR
+RNA-seq change after Lin28a knockdown
+ribosome density change after Lin28a knockdown
+transcript / gene symbol / description
+
+
+#Additional input
+- Table S3
+LIN28A binding site list
+binding site 개수
+binding 위치 분석 가능성 확인
+
+- Table S6
+GO term enrichment 결과
+ER, membrane, secretory 관련 term 확인
+
+- Table S2/external let-7 target list
+let-7 관련 control 분석
+
+#Optional BAM-level validation
+-이미 있는 BAM:
+CLIP-35L33G.bam
+RNA-siLuc.bam
+RNA-siLin28a.bam
+RPF-siLuc.bam
+RPF-siLin28a.bam
+
+이건 전체 분석에 쓰기보다, 대표 후보 gene 2–3개 확인용으로 
+
+
+#---------------------------------------------------------------------------------------
+#Step 2. Direct LIN28A translational repression target 찾기
+#---------------------------------------------------------------------------------------
+질문: LIN28A가 직접 결합하고, Lin28a knockdown 후 translation이 증가하는 gene은 무엇인가?
+
+기준은 이렇게 잡으면 돼.
+
+Direct LIN28A translational repression candidate:
+
+1. LIN28A CLIP enrichment is high
+2. Ribosome density increases after Lin28a knockdown
+3. mRNA abundance change is small
+
+해석은 네가 쓴 그대로 좋아.
+
+LIN28A가 붙어 있었고, LIN28A를 없애니까 ribosome density가 올라갔다. 그런데 mRNA 양은 별로 안 변했다. 그러면 이 gene은 LIN28A가 직접 translation을 억제하던 후보일 수 있다.
+
+여기서 중요한 건 후보(candidate)라고 표현해야 해.
+이 분석만으로 “진짜 direct target이다”라고 확정하는 건 조금 세니까, direct translational repression candidate라고 하면 안전해.
+
+그림:
+scatter plot
+x축: mean LIN28A CLIP enrichment
+y축: ribosome density change after Lin28a knockdown
+색깔: mRNA abundance change small vs large
+direct candidates 강조 표시
+
+
+#---------------------------------------------------------------------------------------
+#Step 3. ER-associated target 안에서 functional subclass 보기
+#---------------------------------------------------------------------------------------
+메인 분석
+
+질문: LIN28A가 억제하는 ER-associated mRNA 중 어떤 종류가 가장 강하게 조절되는가?
+
+먼저 논문 결과 확인용으로:
+
+all expressed genes
+LIN28A-bound genes
+direct repression candidates
+
+이 세 그룹에서 ER / membrane / secretory annotation 비율을 비교해.
+
+그다음 세부 subclass로 나누면 돼.
+
+가능한 subclass:
+secreted protein
+plasma membrane protein
+ER resident protein
+Golgi protein
+lysosomal protein
+receptor
+transporter/channel
+adhesion molecule
+ECM-related protein
+single-pass transmembrane protein
+multi-pass transmembrane protein
+tail-anchored transmembrane protein
+
+그림:
+bar plot: group별 ER-associated 비율
+boxplot: ER-associated vs non-ER ribosome density change
+boxplot: subclass별 ribosome density change
+dot plot: subclass별 mean CLIP enrichment vs mean ribosome density change
+table: subclass별 top candidate genes
+
+이 부분이 “논문 Figure 5A를 그냥 반복”하지 않으려면 중요해. 논문은 GO term 수준에서 ER/secretory pathway enrichment를 보여줬지만, 너는 direct candidate를 다시 정의하고 그 안에서 세부 subclass를 본다는 식으로 가면 돼.
+
+
+#---------------------------------------------------------------------------------------
+#Step 4. LIN28A binding 위치와 repression 강도 비교
+#---------------------------------------------------------------------------------------
+mechanism 쪽 분석
+
+질문: LIN28A가 mRNA의 어디에 붙느냐에 따라 translation repression 정도가 달라지는가?
+
+가능한 분석:
+CDS-dominant binding genes
+3′UTR-dominant binding genes
+5′UTR-dominant binding genes
+multiple-region binding genes
+high binding-site count genes
+low binding-site count genes
+
+볼 질문:
+CDS에 많이 붙은 gene이 더 강하게 derepression되는가?
+3′UTR binding만 있는 gene도 translation 변화가 큰가?
+binding site 수가 많을수록 ribosome density 증가가 큰가?
+
+그림:
+boxplot: binding region별 ribosome density change
+scatter plot: binding site count vs ribosome density change
+correlation: binding site count 또는 CLIP enrichment vs translation change
+
+주의할 점은, 이건 Table S3 column 구조를 먼저 확인해야 해.
+S3에 binding site의 transcript position / region annotation이 잘 들어 있으면 바로 가능하고, 없으면 GTF와 transcript coordinate를 매핑해야 해서 조금 어려워져.
+
+그래서 이건 2순위 분석으로 두면 좋아.
+
+
+#---------------------------------------------------------------------------------------
+#Step 5. let-7-dependent effect와 direct LIN28A effect 분리
+#---------------------------------------------------------------------------------------
+control/해석 보강용
+
+질문: Lin28a knockdown 후 translation 변화가 let-7 target에서 더 큰가, 아니면 LIN28A direct binding target에서 더 큰가?
+
+그룹:
+let-7 predicted targets only
+LIN28A CLIP-bound only
+both let-7 target and LIN28A-bound
+neither
+
+또는 더 간단히:
+direct LIN28A repression candidates
+let-7 predicted targets
+direct LIN28A candidates excluding let-7 targets
+
+그림:
+boxplot: 그룹별 ribosome density change
+UpSet plot 또는 Venn diagram
+let-7 target이 아닌 direct LIN28A candidate gene list
+
+해석:
+이 dataset에서 관찰되는 translation 변화가 let-7-mediated indirect effect보다는 LIN28A가 mRNA에 직접 결합하는 효과와 더 잘 연결되는지 확인한다.
