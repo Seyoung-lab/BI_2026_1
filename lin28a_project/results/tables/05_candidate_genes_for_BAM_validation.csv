@@ -1,0 +1,5 @@
+Gene Symbol,Accession,Description,mean_CLIP_enrichment,Ribosome density change (log2),RNA-seq mRNA change upon Lin28a KD (log2),binding_site_count,functional_subclasses,reason_for_selection
+Pgrmc1,NM_016783,membrane-associated progesterone receptor,4.03142275105527,0.314689645308033,-0.219797064771,21,membrane_or_transmembrane,"Top high-confidence candidate (A∩B): high CLIP enrichment, increased ribosome density after Lin28a KD, limited mRNA change."
+Ktn1,NM_008477,kinectin,2.913330347135473,0.605196674412884,-0.399327911204,62,other_or_unclear,"Top high-confidence candidate (A∩B): high CLIP enrichment, increased ribosome density after Lin28a KD, limited mRNA change."
+Pvrl3,NM_021495,poliovirus receptor-related protein 3 isoform alpha,2.8822204004836833,0.867099929565111,-0.323691220379,17,other/unclear,"Top high-confidence candidate (A∩B): high CLIP enrichment, increased ribosome density after Lin28a KD, limited mRNA change."
+Unc45a,NM_133952,protein unc-45 homolog A,-1.8607703838081033,-1.96460330301207,0.0161376647002,0,N/A,"Negative/comparison gene: Not_candidate group, no detected binding sites (binding_site_count = 0), has ribosome data."

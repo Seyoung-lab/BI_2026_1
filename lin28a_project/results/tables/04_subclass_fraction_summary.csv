@@ -1,0 +1,64 @@
+group,subclass,n_transcripts,fraction
+"All analyzable
+(n=16465)",is_ER_or_protein_folding,181,0.01099301548739751
+"All analyzable
+(n=16465)",is_membrane_or_transmembrane,477,0.02897054357728515
+"All analyzable
+(n=16465)",is_secretory_or_extracellular,118,0.00716671727907683
+"All analyzable
+(n=16465)",is_Golgi_or_trafficking,171,0.010385666565441846
+"All analyzable
+(n=16465)",is_lysosome_or_endosome,59,0.003583358639538415
+"All analyzable
+(n=16465)",is_receptor_or_signaling,1595,0.09687215305192834
+"All analyzable
+(n=16465)",is_transporter_or_channel,706,0.04287883389006984
+"All analyzable
+(n=16465)",is_adhesion_or_ECM,206,0.012511387792286669
+"All analyzable
+(n=16465)",is_other_or_unclear,13179,0.8004251442453689
+"LIN28A-bound
+(FDR<0.05, n=266)",is_ER_or_protein_folding,13,0.04887218045112782
+"LIN28A-bound
+(FDR<0.05, n=266)",is_membrane_or_transmembrane,15,0.05639097744360902
+"LIN28A-bound
+(FDR<0.05, n=266)",is_secretory_or_extracellular,3,0.011278195488721804
+"LIN28A-bound
+(FDR<0.05, n=266)",is_Golgi_or_trafficking,3,0.011278195488721804
+"LIN28A-bound
+(FDR<0.05, n=266)",is_lysosome_or_endosome,1,0.0037593984962406013
+"LIN28A-bound
+(FDR<0.05, n=266)",is_receptor_or_signaling,29,0.10902255639097744
+"LIN28A-bound
+(FDR<0.05, n=266)",is_transporter_or_channel,17,0.06390977443609022
+"LIN28A-bound
+(FDR<0.05, n=266)",is_adhesion_or_ECM,4,0.015037593984962405
+"LIN28A-bound
+(FDR<0.05, n=266)",is_other_or_unclear,190,0.7142857142857143
+"High-confidence
+candidates
+(n=48)",is_ER_or_protein_folding,8,0.16666666666666666
+"High-confidence
+candidates
+(n=48)",is_membrane_or_transmembrane,7,0.14583333333333334
+"High-confidence
+candidates
+(n=48)",is_secretory_or_extracellular,2,0.041666666666666664
+"High-confidence
+candidates
+(n=48)",is_Golgi_or_trafficking,1,0.020833333333333332
+"High-confidence
+candidates
+(n=48)",is_lysosome_or_endosome,1,0.020833333333333332
+"High-confidence
+candidates
+(n=48)",is_receptor_or_signaling,8,0.16666666666666666
+"High-confidence
+candidates
+(n=48)",is_transporter_or_channel,3,0.0625
+"High-confidence
+candidates
+(n=48)",is_adhesion_or_ECM,2,0.041666666666666664
+"High-confidence
+candidates
+(n=48)",is_other_or_unclear,23,0.4791666666666667
