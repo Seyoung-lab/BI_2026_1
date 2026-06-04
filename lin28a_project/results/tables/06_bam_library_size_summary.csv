@@ -1,0 +1,6 @@
+sample,label,bam_file,mapped_reads,rpm_factor
+CLIP_35L33G,CLIP (35L33G),CLIP-35L33G.bam,36589778,36.589778
+RPF_siLuc,RPF siLuc,RPF-siLuc.bam,41007348,41.007348
+RPF_siLin28a,RPF siLin28a,RPF-siLin28a.bam,29178323,29.178323
+RNA_siLuc,RNA-seq siLuc,RNA-siLuc.bam,25785774,25.785774
+RNA_siLin28a,RNA-seq siLin28a,RNA-siLin28a.bam,32938700,32.9387
