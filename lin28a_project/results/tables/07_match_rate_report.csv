@@ -1,0 +1,2 @@
+s3a_unique_transcripts,refgene_unique_nm_ids,matched_transcripts,unmatched_transcripts,match_rate_pct,s3a_sites_in_matched_tx,s3a_sites_in_unmatched_tx,site_coverage_pct
+6606,45714,6524,82,98.76,64760,774,98.82

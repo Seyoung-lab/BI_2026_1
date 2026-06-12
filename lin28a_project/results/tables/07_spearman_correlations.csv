@@ -1,0 +1,7 @@
+region,subset,n,spearman_rho,p_value
+5UTR,all_with_ribo,775,0.014,0.6977
+5UTR,HC_candidates_A_union_B,14,-0.5161,0.0588
+CDS,all_with_ribo,3810,-0.0713,0.0
+CDS,HC_candidates_A_union_B,41,0.0395,0.8062
+3UTR,all_with_ribo,2978,0.1122,0.0
+3UTR,HC_candidates_A_union_B,38,0.1095,0.5129
